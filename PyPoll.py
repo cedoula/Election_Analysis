@@ -72,8 +72,11 @@ with open(file_to_save, "w") as txt_file:
         # Calculate the percentage of votes of a candidate.
         vote_percentage = (float(votes) / float(total_votes)) * 100
         # Print the candidate name and its percentage of vote.
-        #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        # Save the candidate results to the text file.
+        txt_file.write(candidate_results)
+        
         # Determine winner vote count and name.
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
