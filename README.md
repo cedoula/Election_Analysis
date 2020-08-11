@@ -39,3 +39,28 @@ How to use for any election:
 - assign user input variables for csv file and folder location and use it in the code to open the correct file to read.
 - assign user input variables for txt file to save and its folder location and use it in code to write results in it.
 - make sure result csv file has the following structure: Ballot ID | County | Candidate
+
+Change code
+
+from
+```
+# Add a variable to load a file from a path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+
+# Add a variable to save the file to a path.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
+```
+to 
+```
+# Ask User to enter the folder and file name of the results *.csv file to read
+file_to_load_location = input("Enter the name of the folder containing the results *.csv file please.  ")
+file_to_load_name = input("Enter the name of the results *.csv file please.  ")
+# Add a variable to load a file from a path.
+file_to_load = os.path.join(file_to_load_location, f"{file_to_load_name}.csv")
+
+# Ask User to enter the folder and file name of the analysis *.txt file to create/save
+file_to_save_location = input("Enter the name of the folder containing the analysis *.txt file please.  ")
+file_to_save_name = input("Enter the name of the analysis *.txt file please.  ")
+# Add a variable to save the file to a path.
+file_to_save = os.path.join(file_to_save_location, f"{file_to_save_name}.txt")
+```
