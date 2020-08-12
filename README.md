@@ -35,14 +35,15 @@ The analysis of the election shows that:
     - Diana DeGette, who received 73.8% of the vote and 272,892 number of votes.
 
 ## Election-Audit Summary
-How to use for any election:
-- assign user input variables for csv file and folder location and use it in the code to open the correct file to read.
-- assign user input variables for txt file to save and its folder location and use it in code to write results in it.
-- make sure result csv file has the following structure: Ballot ID | County | Candidate
-
-Change code
-
-from
+We have created the script *PyPoll_Challenge.py* for this project. It could be modified in order to be used to conduct an audit analysis for any election organized by the election commission.\
+Here are the requirements:
+1. Ensure the election results *.csv file has the following structure:  
+```
+Ballot ID | County | Candidate
+```
+2. Modify *PyPoll_Challenge.py* script by assigning user input variables for the folder and name of the results *.csv file and analysis *.txt file which will respectively be read and saved.\
+Here is an example of the new script:\
+Change code from
 ```
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("Resources", "election_results.csv")
